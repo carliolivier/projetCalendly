@@ -52,8 +52,9 @@ describe("creation d'un évenement", () => {
 			"https://calendly.com/users/confirmation?confirmation_token=VsSGnfaEmapBZpwKsSNm"
 		);
 		cy.get('[name="password"]').click().type("jonathanTestCalendly123");
-                cy.get('#onetrust-accept-btn-handler').click();
+                
 		cy.contains("Continuer").click();
+                cy.get('#onetrust-accept-btn-handler').click();
 		cy.get(
 			".js-new-event-type-region > :nth-child(1) > .M5lLwMMp9XR_Ejbv83RK > .clyOGp1YInfwtQ8ffY_1 > .M_4ZJy_elGKAc65Rl6DH > ._6n0CRU_Q9ef6f3sgBGZ"
 		).click();
@@ -76,8 +77,9 @@ describe("Supression d'un évenement", () => {
                    'https://calendly.com/users/confirmation?confirmation_token=VsSGnfaEmapBZpwKsSNm'
                 );
                 cy.get('[name="password"]').click().type('jonathanTestCalendly123');
-                cy.get('#onetrust-accept-btn-handler').click();
+                
                 cy.contains('Continuer').click();
+                cy.get('#onetrust-accept-btn-handler').click();
                 cy.wait(3000);
 
                 cy.get('input[type="checkbox"]').each(($elem, index) => {
@@ -86,9 +88,7 @@ describe("Supression d'un évenement", () => {
                         }
                 });
                 cy.wait(3000);
-                cy.get(
-                        '[class="QDMFZL84dmkYn_0UnY8k RCy3C8tdsCfUkZ4tL6_j Y9hbVvdzlYyJiEWjJ9oy fmlLT3BGyLhEUKMImecT _drff0xP0ecktVJak07B _9FU_yg64fo4CH5kkNow cBJ4O_EakspfEJbJujzx"]'
-                ).click();
+                cy.get('[aria-label="Supprimer les types d\'événement"]').click();
                 cy.get(
                         '.Q7UGjqL_GKkhwuE5SBMq > .tM53syywJyhDRyPUDkhB > ._6n0CRU_Q9ef6f3sgBGZ'
                 ).click();
@@ -101,9 +101,10 @@ describe("Modification Evenement", () => {
                         'https://calendly.com/users/confirmation?confirmation_token=VsSGnfaEmapBZpwKsSNm'
                         );
                 cy.get('[name="password"]').click().type('jonathanTestCalendly123');
-                cy.get('#onetrust-accept-btn-handler').click();
+                
                 cy.contains('Continuer').click();
-                cy.get('[data-testid="event-type-card-150496210"] > .js-drag-zone').click();
+                cy.get('#onetrust-accept-btn-handler').click();
+                cy.get('.event-type-card > .js-drag-zone').eq(1).click();
                 cy.get(':nth-child(1) > .S1Ux16_NLOefrMjLsfrY > .EOucS6QiITe8Rc3WGfSf > .vihfdnuRI1GZ1U9jAe0Y > ._Fhv8x7S7VIOKRzoemM9 > .jUyQ4qy0XBb5sflvXnT3').click();
                 cy.get('[name="name"]').clear().type('cypress 2');
                 cy.get('.ql-editor').type('test test')
@@ -119,9 +120,9 @@ describe("Modification de la reservation d'un évenement", () => {
         it("modification reservation", () => {
                 cy.visit("https://calendly.com/users/confirmation?confirmation_token=VsSGnfaEmapBZpwKsSNm");
                 cy.get('[name="password"]').click().type('jonathanTestCalendly123');
-                cy.get('#onetrust-accept-btn-handler').click();
                 cy.contains('Continuer').click();
-                cy.get('[data-testid="event-type-card-150495372"] > .q2ovdrDio1O20z_RQrJk > .Oq2YrD4C9wTAnhviKPh1 > .A7tqJ6C1P8YpEgrEWrXi').click();
+                cy.get('#onetrust-accept-btn-handler').click();
+                cy.get('.event-type-card > .q2ovdrDio1O20z_RQrJk > .Oq2YrD4C9wTAnhviKPh1 > .A7tqJ6C1P8YpEgrEWrXi').eq(2).click();
                 cy.get(':nth-child(1) > :nth-child(1) > .SZMt7ETD2nqaZyzpJ27G').click();
                 cy.get(':nth-child(2) > :nth-child(2) > .S1Ux16_NLOefrMjLsfrY > .EOucS6QiITe8Rc3WGfSf > .vihfdnuRI1GZ1U9jAe0Y > ._Fhv8x7S7VIOKRzoemM9 > .jUyQ4qy0XBb5sflvXnT3').click();
                 cy.get('.yxQGz4TmlpbuYIBmmeqn > .G6zD78qHWQLbFGF4NRX3 > .GW7SY9S_Y6rZoSt3T8Jz > .Nt4RAzntWwS1PxuPWOZz > ._rBDIkcDYEF3OUayaJZN').click();
