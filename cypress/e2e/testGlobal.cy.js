@@ -106,7 +106,6 @@ describe("Modification Evenement", () => {
                 cy.get('[name="name"]').clear().type('cypress 2');
                 cy.get('.ql-editor').type('test test')
                 cy.get('[name="inviteesLimit"]').clear().type('6');
-                cy.get(':nth-child(8) > .F4K59uGpZ4gwOu7vpA69').click();
                 cy.get('._ycHXpUVi7cUuweyfMWM').click();
                 cy.get('.XCje5h1w6nncW8JWTp61 > ._jntWzJ5Kez7y4_z6YDF > ._6n0CRU_Q9ef6f3sgBGZ').click();
                 cy.get('._fD7lClnPTnx7I5SbTbq > ._6n0CRU_Q9ef6f3sgBGZ').click();          
