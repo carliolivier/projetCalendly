@@ -78,6 +78,8 @@ describe("Supression d'un évenement", () => {
                 cy.get('[name="password"]').click().type('jonathanTestCalendly123');
                 cy.get('#onetrust-accept-btn-handler').click();
                 cy.contains('Continuer').click();
+                cy.wait(3000);
+
                 cy.get('input[type="checkbox"]').each(($elem, index) => {
                         if (index === 1) {
                                 cy.wrap($elem).click({ force: true });
